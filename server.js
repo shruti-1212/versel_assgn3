@@ -15,7 +15,16 @@ app.set('views', __dirname + '/views');
 // Serve static files (optional, if you have a 'public' folder for assets)
 app.use(express.static(__dirname + '/public'));
  
-
+//start the server and gives output
+// app.listen(HTTP_PORT, () => console.log(`server listening on: ${HTTP_PORT}`));
+legoData.initialize().then(() => {
+    app.listen(HTTP_PORT, () => {
+      console.log(`Server listening on port ${HTTP_PORT}`);
+    });
+  }).catch(err => {
+    console.log(`Error: ${err}`);
+  });
+ 
  
 //Routes
 app.get('/', (req, res) => {
@@ -61,15 +70,3 @@ app.get('/lego/sets', (req, res) => {
   app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
   });
-
-
-  //start the server and gives output
-// app.listen(HTTP_PORT, () => console.log(`server listening on: ${HTTP_PORT}`));
-legoData.initialize().then(() => {
-    app.listen(HTTP_PORT, () => {
-      console.log(`Server listening on port ${HTTP_PORT}`);
-    });
-  }).catch(err => {
-    console.log(`Error: ${err}`);
-  });
- 
