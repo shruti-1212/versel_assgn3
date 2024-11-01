@@ -1,10 +1,10 @@
 /******************************************************************************** 
-*  WEB700 – Assignment 2
+*  WEB700 – Assignment 4
 *  
 *  I declare that this assignment is my own work in accordance with Seneca's 
 *  Academic Integrity Policy: 
 *  
-*  Name: Shruti Hande Student ID: 111559233 Date: 25-09-2024 
+*  Name: Shruti Hande Student ID: 111559233 Date: 01-11-2024 
 ********************************************************************************/
 
 class legoData {
@@ -75,6 +75,18 @@ class legoData {
                 resolve(foundSets);
             } else {
                 reject(`No sets found for theme "${theme}".`);
+            }
+        });
+    }
+    // Add a new set using promises
+    addSet(newSet) {
+        return new Promise((resolve, reject) => {
+            const setExists = this.sets.some(set => set.set_num === newSet.set_num);
+            if (setExists) {
+                reject("Set already exists");
+            } else {
+                this.sets.push(newSet);
+                resolve(); // No data to resolve, just successful completion
             }
         });
     }

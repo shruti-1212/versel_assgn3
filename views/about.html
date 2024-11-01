@@ -6,6 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
@@ -42,7 +43,189 @@
                         <p class="lead text-muted">Everything you want to know about me - the designer & developer.</p>
                     </div>
                 </section>
-
+				<p >
+					Myself Shruti. At Seneca I am taking the Database Application Developer Course.
+				</p>
+				<section>
+					<header>
+						THEME DEMO
+					</header>
+					<p>
+						This scetion consists of tables, video, images for theme demo.
+					</p>
+				</section>
+				<section>
+					<header>
+						TABLES
+					</header>
+					<table>
+						<caption>Movies by Genre</caption>
+						<thead>
+							<tr>
+								<th rowspan="2">Movie ID</th>
+								<th colspan="2">Details</th>
+							</tr>
+							<tr>
+								<th>Title</th>
+								<th>Genre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>The Shawshank Redemption</td>
+								<td>Drama</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Inception</td>
+								<td>Sci-Fi</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Forrest Gump</td>
+								<td>Drama</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="3">End of Movies by Genre</td>
+							</tr>
+						</tfoot>
+					</table>
+				
+					<!-- Second Table: Top-Rated Movies -->
+					<table>
+						<caption>Top-Rated Movies</caption>
+						<thead>
+							<tr>
+								<th>Movie</th>
+								<th>Rating</th>
+								<th rowspan="2">Review Link</th>
+							</tr>
+							<tr>
+								<th>Title</th>
+								<th>IMDb Rating</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="2">The Godfather</td>
+								<td>9.2</td>
+								<td><a href="https://www.imdb.com/title/tt0068646/">IMDb</a></td>
+							</tr>
+							<tr>
+								<td>9.1 (Rotten Tomatoes)</td>
+								<td><a href="https://www.rottentomatoes.com/m/the_godfather">Rotten Tomatoes</a></td>
+							</tr>
+							<tr>
+								<td colspan="2">Inception</td>
+								<td><a href="https://www.imdb.com/title/tt1375666/">IMDb</a></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="3">End of Top-Rated Movies</td>
+							</tr>
+						</tfoot>
+					</table>
+					<p>
+						Movies by Genre: A table listing movies along with their genre.
+						Top-Rated Movies: A table that shows highly-rated movies and provides links to reviews.		
+					</p>
+				</section>
+				<!-- Lists Section -->
+				<section>
+					<header>
+						<h2>Popular Movie Genres and Examples</h2>
+					</header>
+			
+					<ol>
+						<li>Drama</li>
+						<li>Sci-Fi</li>
+						<li>
+							Action
+							<ul>
+								<li><a href="https://www.imdb.com/title/tt1375666/">Inception</a></li>
+								<li><a href="https://www.imdb.com/title/tt2911666/">John Wick</a></li>
+								<li><a href="https://www.imdb.com/title/tt4154796/">Avengers: Endgame</a></li>
+							</ul>
+						</li>
+						<li>Comedy</li>
+						<li>Horror</li>
+					</ol>
+			
+					<!-- Section Description -->
+					<p>
+						This section lists popular movie genres in an ordered list, with each item representing a genre. The Action genre includes a sublist of some iconic action movies, complete with links to their IMDb pages. This structure allows easy navigation for those interested in exploring films by genre.
+					</p>
+				</section>
+				<!-- Entertainment Images Section -->
+				<section>
+					<header>
+						<h2>Entertainment Highlights</h2>
+					</header>
+			
+					<!-- Images -->
+					<figure>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Gruppbild_av_Ingrid_Bj%C3%B6rk%2C_Carin_Rydbeck._Hessan_Sigur_Rydbeck%2C_Gunhild_%C3%96sterberg._En_Bengalisk_Tiger_-_Nordiska_Museet_-_NMA.0056829.jpg" 
+							 alt="Group portrait with a Bengal Tiger display, Nordiska Museet">
+						<figcaption>Historic group photo with a Bengal Tiger display - Nordiska Museet</figcaption>
+					</figure>
+			
+					<figure>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Transformers_One_2024_Soap2day_Hd.jpg" 
+							 alt="Promotional poster for Transformers One (2024)">
+						<figcaption>Promotional poster for the movie *Transformers One* (2024)</figcaption>
+					</figure>
+			
+					<figure>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Yuri_disseldorp.jpg" 
+							 alt="Yuri Disseldorp in a scene from a production">
+						<figcaption>Yuri Disseldorp captured in a performance scene</figcaption>
+					</figure>
+			
+					<!-- Section Description -->
+					<p>
+						This section features three unique images from the world of entertainment. The first image showcases a historical group portrait at the Nordiska Museet, the second image is a promotional poster for the upcoming movie *Transformers One* (2024), and the third is an onstage capture of Yuri Disseldorp in action. Each image provides a visual insight into various forms of entertainment, from history to modern film and theater.
+					</p>
+				</section>
+				<!-- Audio Player Section -->
+				<section>
+					<header>
+						<h2>Sample Audio Experience</h2>
+					</header>
+			
+					<!-- Audio Player -->
+					<audio controls>
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-audio.mp3" type="audio/mpeg">
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-audio.ogg" type="audio/ogg">
+						Your browser does not support the audio element.
+					</audio>
+			
+					<!-- Section Description -->
+					<p>
+						This section features an HTML5 audio player with a sample audio track available in both MP3 and OGG formats for compatibility across various browsers. Listeners can play, pause, and adjust the volume, providing a simple and accessible way to enjoy the audio content.
+					</p>
+				</section>
+				<!-- Video Player Section -->
+				<section>
+					<header>
+						<h2>Sample Video Showcase</h2>
+					</header>
+			
+					<!-- Video Player -->
+					<video controls width="600" poster="https://via.placeholder.com/600x400?text=Sample+Video">
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-video.mp4" type="video/mp4">
+						<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-video.webm" type="video/webm">
+						Your browser does not support the video element.
+					</video>
+			
+					<!-- Section Description -->
+					<p>
+						This section features an HTML5 video player with a sample video available in both MP4 and WebM formats, ensuring compatibility across a variety of browsers. The video player allows viewers to play, pause, and adjust the playback time, making it an easy and interactive way to experience video content.
+					</p>
+				</section>
 			</main>
 		</div>
 	</div>
