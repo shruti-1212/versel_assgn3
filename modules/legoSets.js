@@ -1,5 +1,5 @@
 /******************************************************************************** 
-*  WEB700 – Assignment 4
+*  WEB700 – Assignment 5
 *  
 *  I declare that this assignment is my own work in accordance with Seneca's 
 *  Academic Integrity Policy: 
@@ -10,6 +10,7 @@
 class legoData {
     constructor() {
         this.sets = [];
+        this.themes = [];// Added "themes" property and initialized it as an empty array
     }
 
     // Initialize method using promises
@@ -18,6 +19,9 @@ class legoData {
             try {
                 const setData = require("../data/setData");
                 const themeData = require("../data/themeData");
+
+                // Populate the themes array with the contents of themeData
+                this.themes = [...themeData];
 
                 // Map theme id to theme name
                 const themeMap = {};
@@ -48,6 +52,29 @@ class legoData {
                 resolve(this.sets);
             } else {
                 reject('No sets available.');
+            }
+        });
+    }
+
+    // Return all themes using promises
+    getAllThemes() {
+        return new Promise((resolve, reject) => {
+            if (this.themes.length > 0) {
+                resolve(this.themes);
+            } else {
+                reject('No themes available.');
+            }
+        });
+    }
+
+    // Find theme by id using promises
+    getThemeById(id) {
+        return new Promise((resolve, reject) => {
+            const foundTheme = this.themes.find(theme => theme.id === id);
+            if (foundTheme) {
+                resolve(foundTheme);
+            } else {
+                reject(`Unable to find theme ${id}.`);
             }
         });
     }
@@ -90,6 +117,20 @@ class legoData {
             }
         });
     }
+    // Delete set by set number
+    deleteSetByNum(setNum) {
+    return new Promise((resolve, reject) => {
+      let foundSetIndex = this.sets.findIndex(s => s.set_num === setNum);
+      
+      if (foundSetIndex !== -1) {
+        this.sets.splice(foundSetIndex, 1); 
+        resolve(); 
+      } else {
+        reject(`Set with number ${setNum} not found.`);
+      }
+    });
+  }
+
 }
 
 module.exports = legoData;
