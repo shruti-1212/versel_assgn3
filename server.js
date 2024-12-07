@@ -1,12 +1,12 @@
 /********************************************************************************
-* WEB700 – Assignment 05
+* WEB700 – Assignment 06
 *
 * I declare that this assignment is my own work in accordance with Seneca's
 * Academic Integrity Policy:
 *
 * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 *
-* Name: Shruti Hande Student ID: 111559233 Date: 14-11-2024
+* Name: Shruti Hande Student ID: 111559233 Date: 06-12-2024
 *
 * Published URL: https://versel-assgn3-4g96x85x9-shruti-1212s-projects.vercel.app/
 *
@@ -70,14 +70,14 @@ app.get('/lego/sets', (req, res) => {
           res.render("sets", { sets: sets });
         }
       ).catch(err => {
-        res.status(404).send(err);
+        res.render("404", {message: "I'm sorry, we're unable to find what you'relooking for."});
       });
     } else {
       legoData.getAllSets().then(
         sets => {
           res.render("sets", { sets: sets });}
       ).catch(err => {
-        res.status(404).send(err);
+        res.render("404", {message: "I'm sorry, we're unable to find what you'relooking for."});
       });
     }
   });
@@ -91,7 +91,7 @@ app.get('/lego/sets', (req, res) => {
         res.render("set", { set: set });
       }
     ).catch(err => {
-      res.status(404).send(err);
+      res.render("404", {message: "I'm sorry, we're unable to find what you'relooking for."});
     });
   });
  
@@ -100,15 +100,14 @@ app.get('/lego/sets', (req, res) => {
       sets => {
         res.render("addSet", { themes: themes });}
     ).catch(err => {
-      res.status(404).send(err);
+      res.render("404", {message: "I'm sorry, we're unable to find what you'relooking for."});
     });
   });
   
   // POST route to handle adding a new Lego set
   app.post('/lego/addSet', async (req, res) => {
     // Extract form data from the request body
-    let foundTheme = await legoData.getThemeById(req.body.theme_id);
-    req.body.theme = foundTheme.name
+
     const setData = {
     
       name: req.body.name,
@@ -139,7 +138,7 @@ app.get('/lego/sets', (req, res) => {
 
     res.redirect("/lego/sets");
   } catch (err) {
-    res.status(404).send(err);
+    res.render("404", {message: "I'm sorry, we're unable to find what you'relooking for."});
   }
 });
 
